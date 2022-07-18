@@ -1,0 +1,37 @@
+.layout {
+  padding: 1rem;
+}
+
+h2,
+h3 {
+  margin: 0;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+
+  img {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  & + & {
+    margin-top: 0.5rem;
+  }
+}
+
+.total {
+  // margin-top: 2rem;
+  // font-weight: bold;
+}
+
+hr {
+  margin-block: 1rem;
+}

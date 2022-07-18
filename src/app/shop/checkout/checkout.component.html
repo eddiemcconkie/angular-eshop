@@ -1,0 +1,75 @@
+<mat-card *ngIf="!orderPlaced">
+  <mat-card-title>Cart</mat-card-title>
+  <mat-card-content *ngFor="let cartItem of cart">
+    <div class="cart-item | flex gap-1">
+      <img
+        mat-card-md-image
+        src="assets/{{ cartItem.shopItem.imagePath }}"
+        alt=""
+      />
+      <div>
+        <h3>{{ cartItem.shopItem.name }}</h3>
+        <div class="flex gap-1 align-center">
+          <mat-form-field>
+            <mat-label>Quantity</mat-label>
+            <input
+              matInput
+              type="number"
+              [value]="cartItem.quantity"
+              min="1"
+              max="99"
+              (input)="updateCartItem(cartItem._id, q.value)"
+              #q
+            />
+          </mat-form-field>
+          <span>
+            {{ cartItem.quantity * cartItem.shopItem.price | currency }}
+          </span>
+        </div>
+        <button mat-stroked-button (click)="removeCartItem(cartItem._id)">
+          Remove from cart
+        </button>
+      </div>
+    </div>
+    <hr />
+  </mat-card-content>
+
+  <mat-card-content *ngIf="cart.length === 0">
+    <em>Your cart is empty!</em>
+  </mat-card-content>
+
+  <mat-card-title *ngIf="cart.length > 0">Checkout</mat-card-title>
+  <div class="price" *ngIf="cart.length > 0">
+    <div class="flex space-between">
+      <span>Subtotal:</span>
+      <span class="money">{{ cartTotal | currency }}</span>
+    </div>
+    <div class="flex space-between">
+      <span>Tax:</span>
+      <span class="money">{{ cartTotal * tax | currency }}</span>
+    </div>
+    <div class="flex space-between">
+      <span>Shipping:</span>
+      <span class="money">{{ shipping | currency }}</span>
+    </div>
+    <hr />
+    <div class="flex space-between">
+      <strong>Total:</strong>
+      <strong class="money">{{
+        cartTotal * (1 + tax) + shipping | currency
+      }}</strong>
+    </div>
+  </div>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="placeOrder()"
+    *ngIf="cart.length > 0"
+  >
+    Place Order
+  </button>
+</mat-card>
+
+<mat-card *ngIf="orderPlaced" class="order-placed">
+  <mat-card-title>Your order is on it's way!</mat-card-title>
+</mat-card>

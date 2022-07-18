@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Dell Laptop",
+    "description": "",
+    "imagePath": "dell-laptop.jpg",
+    "rating": 4,
+    "price": 850
+  },
+  {
+    "name": "Google Pixel",
+    "description": "",
+    "imagePath": "google-pixel.jpg",
+    "rating": 5,
+    "price": 320
+  },
+  {
+    "name": "HP Spectre",
+    "description": "",
+    "imagePath": "hp-spectre.jpg",
+    "rating": 5,
+    "price": 950
+  },
+  {
+    "name": "Keyboard",
+    "description": "",
+    "imagePath": "keyboard.jpg",
+    "rating": 3,
+    "price": 35
+  },
+  {
+    "name": "Logitech Mouse",
+    "description": "",
+    "imagePath": "logitech-mouse.jpg",
+    "rating": 4,
+    "price": 40
+  },
+  {
+    "name": "Samsung Phone",
+    "description": "",
+    "imagePath": "samsung-phone.jpg",
+    "rating": 3,
+    "price": 430
+  },
+  {
+    "name": "Sony Headphones",
+    "description": "",
+    "imagePath": "sony-headphones.jpg",
+    "rating": 4,
+    "price": 130
+  },
+  {
+    "name": "Nintendo Switch",
+    "description": "",
+    "imagePath": "switch.jpg",
+    "rating": 5,
+    "price": 280
+  },
+  {
+    "name": "Anker Wireless Charger",
+    "description": "",
+    "imagePath": "wireless-charger.jpg",
+    "rating": 5,
+    "price": 30
+  },
+  {
+    "name": "Xbox Controller",
+    "description": "",
+    "imagePath": "xbox-controller.jpg",
+    "rating": 5,
+    "price": 55
+  }
+]

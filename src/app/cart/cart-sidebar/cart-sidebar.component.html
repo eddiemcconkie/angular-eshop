@@ -1,0 +1,39 @@
+<div class="layout">
+  <div class="flex space-between">
+    <h2>Cart</h2>
+    <button
+      mat-icon-button
+      aria-label="Close cart sidebar"
+      (click)="closeCart.emit()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="cart.length > 0">
+    <div *ngFor="let cartItem of cart" class="cart-item">
+      <img
+        src="assets/{{ cartItem.shopItem.imagePath }}"
+        [alt]="cartItem.shopItem.name"
+      />
+      <div>
+        <h3>
+          {{ cartItem.shopItem.name }}
+          <span *ngIf="cartItem.quantity > 1"> x{{ cartItem.quantity }} </span>
+        </h3>
+        <span>{{
+          cartItem.quantity * cartItem.shopItem.price | currency
+        }}</span>
+      </div>
+    </div>
+    <hr />
+    <p class="total">Subtotal: {{ cartTotal | currency }}</p>
+    <a
+      routerLink="checkout"
+      mat-raised-button
+      color="accent"
+      (click)="closeCart.emit()"
+      >Checkout</a
+    >
+  </div>
+  <em *ngIf="cart.length === 0">Your cart is empty!</em>
+</div>

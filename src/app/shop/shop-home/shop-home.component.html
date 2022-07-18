@@ -1,0 +1,15 @@
+<!-- search bar -->
+<div class="grid">
+  <a *ngFor="let item of shopItems" [routerLink]="item._id">
+    <mat-card>
+      <img mat-card-image [src]="'assets/' + item.imagePath" />
+      <mat-card-title>
+        {{ item.name }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ item.price | currency }}
+      </mat-card-subtitle>
+      <app-rating [rating]="item.rating"></app-rating>
+    </mat-card>
+  </a>
+</div>

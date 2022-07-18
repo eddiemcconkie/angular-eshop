@@ -1,0 +1,45 @@
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  gap: 1rem;
+  max-width: 80rem;
+  margin-inline: auto;
+  margin-block: 1rem;
+  padding-inline: 1rem;
+}
+
+$gap: clamp(0.5rem, 3vw, 1rem);
+
+.img-preview {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: $gap;
+  flex-wrap: wrap;
+}
+
+.main-img {
+  width: 100%;
+  max-height: 400px;
+  flex: 9999 1 400px;
+  display: block;
+  margin-inline: auto;
+  object-fit: cover;
+}
+
+.img-thumbnails {
+  display: flex;
+  flex: 1 1 80px;
+  flex-wrap: wrap;
+  gap: $gap;
+  align-content: flex-start;
+
+  > img {
+    object-fit: cover;
+    max-width: 15vw;
+    max-height: 15vw;
+  }
+}
+
+mat-form-field {
+  width: 6.5rem;
+}

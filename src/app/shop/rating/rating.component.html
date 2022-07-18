@@ -1,0 +1,9 @@
+<div class="rating">
+  <mat-icon color="accent" *ngFor="let i of [].constructor(rating)">
+    star
+  </mat-icon>
+  <mat-icon color="gray" *ngFor="let i of [].constructor(5 - rating)">
+    star
+  </mat-icon>
+  <span>{{ rating }}/5</span>
+</div>

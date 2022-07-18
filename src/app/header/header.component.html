@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="mat-elevation-z3">
+  <a routerLink="/">Angular E-Shop</a>
+  <span class="spacer"></span>
+  <button mat-button (click)="onClickUserButton()">
+    {{ displayName || "Login" }}
+  </button>
+  <button
+    mat-icon-button
+    aria-label="See shopping cart"
+    (click)="toggleCart.emit()"
+  >
+    <mat-icon
+      [matBadge]="cartSize || ''"
+      matBadgeColor="accent"
+      matBadgeSize="small"
+    >
+      shopping_cart
+    </mat-icon>
+  </button>
+</mat-toolbar>

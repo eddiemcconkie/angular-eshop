@@ -1,0 +1,40 @@
+img {
+  object-fit: cover;
+}
+
+mat-card {
+  max-width: 30rem;
+  margin-block: 1rem;
+  margin-inline: auto;
+}
+
+mat-card-title {
+  margin-block-end: 1rem;
+
+  &:not(:first-of-type) {
+    margin-block-start: 3rem;
+  }
+}
+
+mat-form-field {
+  width: 3rem;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+.price {
+  max-width: 10rem;
+  margin-block-end: 2rem;
+
+  p {
+    margin-block: 0;
+  }
+}
+
+.order-placed {
+  min-block-size: 15rem;
+  display: grid;
+  place-content: center;
+}
